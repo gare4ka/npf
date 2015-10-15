@@ -535,6 +535,7 @@ npf.events.TouchHandler.prototype.reset_ = function() {
   this.distance_ = 0;
   this.angle_ = 0;
   this.gesture_ = null;
+  this.movePos_ = null;
 };
 
 /**
