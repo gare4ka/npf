@@ -12,10 +12,11 @@ goog.require('goog.structs');
  * @param {goog.net.XmlHttpFactory=} opt_xmlHttpFactory Factory to use when
  *     creating XMLHttpRequest objects.
  * @constructor
+ * @struct
  * @extends {goog.net.XhrIo}
  */
 npf.net.XhrIo = function(opt_xmlHttpFactory) {
-  goog.base(this, opt_xmlHttpFactory);
+  npf.net.XhrIo.base(this, 'constructor', opt_xmlHttpFactory);
 
   /**
    * @private {XMLHttpRequest}
@@ -133,7 +134,7 @@ npf.net.XhrIo.cleanup = function() {
 
 /** @inheritDoc */
 npf.net.XhrIo.prototype.disposeInternal = function() {
-  goog.base(this, 'disposeInternal');
+  npf.net.XhrIo.base(this, 'disposeInternal');
 
   this.nativeXhr_ = null;
 };
@@ -144,7 +145,7 @@ npf.net.XhrIo.prototype.send = function(url, opt_method, opt_content,
   /** @type {!Object} */
   var headers = this.parseRequestHeaders(opt_headers);
 
-  goog.base(this, 'send', url, opt_method, opt_content, headers);
+  npf.net.XhrIo.base(this, 'send', url, opt_method, opt_content, headers);
 };
 
 /**
@@ -197,7 +198,7 @@ npf.net.XhrIo.prototype.dispatchEvent = function(e) {
     }, this);
   }
 
-  return goog.base(this, 'dispatchEvent', e);
+  return npf.net.XhrIo.base(this, 'dispatchEvent', e);
 };
 
 /**
