@@ -393,7 +393,7 @@ npf.events.TouchHandler.getDirectionFromAngle = function(angle) {
 /**
  * Returns count of fingers in the event.
  * When no fingers are detected, one finger is returned (mouse pointer).
- * @param {Event} nativeEvent
+ * @param {!Event} nativeEvent
  * @return {number}
  */
 npf.events.TouchHandler.getFingerCount = function(nativeEvent) {
@@ -404,7 +404,7 @@ npf.events.TouchHandler.getFingerCount = function(nativeEvent) {
 
 /**
  * Get the x and y positions from the event object.
- * @param {Event} nativeEvent
+ * @param {!Event} nativeEvent
  * @return {!Array.<!goog.math.Coordinate>}
  */
 npf.events.TouchHandler.getPositionFromEvent = function(nativeEvent) {
@@ -464,7 +464,7 @@ npf.events.TouchHandler.prototype.getDomHelper = function() {
 
 /**
  * Cancel event.
- * @param {Event} nativeEvent
+ * @param {!Event} nativeEvent
  * @private
  */
 npf.events.TouchHandler.prototype.cancelEvent_ = function(nativeEvent) {
@@ -493,7 +493,7 @@ npf.events.TouchHandler.prototype.reset_ = function() {
 /**
  * Hold gesture.
  * Fired on touchstart.
- * @param {Event} nativeEvent
+ * @param {!Event} nativeEvent
  * @private
  */
 npf.events.TouchHandler.prototype.gesturesHold_ = function(nativeEvent) {
@@ -514,7 +514,7 @@ npf.events.TouchHandler.prototype.gesturesHold_ = function(nativeEvent) {
 /**
  * Swipe gesture.
  * Fired on touchend.
- * @param {Event} nativeEvent
+ * @param {!Event} nativeEvent
  * @private
  */
 npf.events.TouchHandler.prototype.gesturesSwipe_ = function(nativeEvent) {
@@ -566,7 +566,7 @@ npf.events.TouchHandler.prototype.gesturesSwipe_ = function(nativeEvent) {
 /**
  * Drag gesture
  * Fired on mousemove
- * @param {Event} nativeEvent
+ * @param {!Event} nativeEvent
  * @private
  */
 npf.events.TouchHandler.prototype.dragGestures_ = function(nativeEvent) {

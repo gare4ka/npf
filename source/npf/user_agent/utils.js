@@ -131,6 +131,7 @@ npf.userAgent.utils.mq = function(mq, opt_domHelper) {
     var styles = win.getComputedStyle ?
       win.getComputedStyle(node, null) : node.currentStyle;
     bool = 'absolute' == styles['position'];
+    return bool;
   }, null, null, domHelper);
 
   return bool;
