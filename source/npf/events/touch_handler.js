@@ -444,18 +444,6 @@ npf.events.TouchHandler.prototype.disposeInternal = function() {
 };
 
 /**
- * Reset the internal vars to the start values.
- * @private
- */
-npf.events.TouchHandler.prototype.reset_ = function() {
-  this.angle_ = 0;
-  this.distance_ = 0;
-  this.first_ = false;
-  this.fingers_ = 0;
-  this.gesture_ = null;
-};
-
-/**
  * @return {goog.dom.DomHelper}
  */
 npf.events.TouchHandler.prototype.getDomHelper = function() {
