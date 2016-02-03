@@ -505,7 +505,8 @@ npf.events.TouchHandler.prototype.gesturesHold_ = function(nativeEvent) {
     this.holdTimer_ = goog.Timer.callOnce(function() {
       if (this.gesture_ == npf.events.TouchHandler.Gesture.HOLD) {
         this.dispatchEvent(new npf.events.TouchHandler.TapEvent(
-          nativeEvent, npf.events.TouchHandler.EventType.HOLD, this.startPos_));
+          nativeEvent, npf.events.TouchHandler.EventType.HOLD,
+          /** @type {!Array} */ (this.startPos_)));
       }
     }, this.holdTimeout, this);
   }
