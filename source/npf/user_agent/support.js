@@ -2709,6 +2709,7 @@ npf.userAgent.support.testPropsAll_ = function(prop) {
  */
 npf.userAgent.support.testProps_ = function(props) {
   for (var i in props) {
+    i = parseInt(i, 10);
     if (
       !npf.userAgent.support.contains_(props[i], '-') &&
       goog.isDef(npf.userAgent.support.mStyle_[props[i]])
@@ -2733,7 +2734,7 @@ npf.userAgent.support.testDomProps_ = function(prop, obj) {
 
   for (var i in props) {
     /** @type {*} */
-    var item = obj[props[i]];
+    var item = obj[props[parseInt(i, 10)]];
 
     if (goog.isDef(item)) {
       return item;
@@ -2753,6 +2754,7 @@ npf.userAgent.support.testDomProps_ = function(prop, obj) {
  */
 npf.userAgent.support.testPropsPrefixed_ = function(props) {
   for (var i in props) {
+    i = parseInt(i, 10);
     if (goog.isDef(npf.userAgent.support.mStyle_[props[i]])) {
       return props[i];
     }

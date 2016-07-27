@@ -175,6 +175,7 @@ npf.userAgent.utils.prefixed = function(prop, obj, opt_actualFunc) {
   var props = (prop + ' ' + domPrefixes.join(ucProp + ' ') + ucProp).split(' ');
 
   for (var i in props) {
+    i = parseInt(i, 10);
     if (props[i] in obj) {
       // return the property name as a string
       if (opt_actualFunc) {
