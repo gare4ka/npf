@@ -750,7 +750,9 @@ npf.events.TouchHandler.prototype.tapGestures_ = function(nativeEvent) {
       nativeEvent, npf.events.TouchHandler.EventType.DOUBLETAP,
       /** @type {!Array<!goog.math.Coordinate>} */ (this.startPos_)
     ));
-    this.cancelEvent_(nativeEvent);
+    if (this.preventDefault) {
+      this.cancelEvent_(nativeEvent);
+    }
   } else {
     // single tap is single touch
 
@@ -772,7 +774,9 @@ npf.events.TouchHandler.prototype.tapGestures_ = function(nativeEvent) {
         this.dispatchEvent(new npf.events.TouchHandler.TapEvent(
           nativeEvent, npf.events.TouchHandler.EventType.TAP,
           /** @type {!Array<!goog.math.Coordinate>} */ (this.startPos_)));
-        this.cancelEvent_(nativeEvent);
+        if (this.preventDefault) {
+          this.cancelEvent_(nativeEvent);
+        }
       }
     }
   }
