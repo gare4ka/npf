@@ -2021,7 +2021,7 @@ npf.userAgent.css.isVmaxUnitSupported = function() {
 
     npf.userAgent.css.vmaxUnit_ =
       npf.userAgent.utils.testStyles(styles, function(node) {
-        var elem = node.childNodes[2];
+        var elem = /** @type {Element} */ (node.childNodes[2]);
         var scroller = node.childNodes[1];
         var fullSizeElem = node.childNodes[0];
         /** @type {number} */
@@ -2068,7 +2068,7 @@ npf.userAgent.css.isVminUnitSupported = function() {
 
     npf.userAgent.css.vminUnit_ =
       npf.userAgent.utils.testStyles(styles, function(node) {
-        var elem = node.childNodes[2];
+        var elem = /** @type {Element} */ (node.childNodes[2]);
         var scroller = node.childNodes[1];
         var fullSizeElem = node.childNodes[0];
         /** @type {number} */

@@ -121,20 +121,16 @@ npf.userAgent.utils.mq = function(mq, opt_domHelper) {
     return mql ? !!mql['matches'] : false;
   }
 
-  /** @type {boolean} */
-  var bool = false;
   /** @type {string} */
   var styles = '@media ' + mq + ' {#' +
     npf.userAgent.utils.ID + '{position:absolute;}}';
 
-  npf.userAgent.utils.testStyles(styles, function(node) {
+  return npf.userAgent.utils.testStyles(styles, function(node) {
     var styles = win.getComputedStyle ?
       win.getComputedStyle(node, null) : node.currentStyle;
-    bool = 'absolute' == styles['position'];
-    return bool;
-  }, null, null, domHelper);
 
-  return bool;
+    return 'absolute' == styles['position'];
+  }, null, null, domHelper);
 };
 
 /**
@@ -175,6 +171,7 @@ npf.userAgent.utils.prefixed = function(prop, obj, opt_actualFunc) {
   var props = (prop + ' ' + domPrefixes.join(ucProp + ' ') + ucProp).split(' ');
 
   for (var i in props) {
+    i = parseInt(i, 10);
     if (props[i] in obj) {
       // return the property name as a string
       if (opt_actualFunc) {
